@@ -12,9 +12,13 @@ This class was created because I wasn't satisfied with standard Apple AVPlayer. 
 - Ability to use mp4 files as video source
 
 
-##Getting Started
+##Installation
 
 Just add AKVideoImageView.h and AKVideoImageView.m files to your project.
+
+###Compressing your video file
+Before starting using this class, you need to properly compress video.<br /> Here is an example of libx264 compression options on OS X system using ffmpeg utility:
+<br />ffmpeg -i input.mov -vcodec libx264 -level 3.1 -pix_fmt yuv420p -threads 1 -preset placebo -crf 19 -tune film -x264opts colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off output.mp4
 
 
 ##Usage
