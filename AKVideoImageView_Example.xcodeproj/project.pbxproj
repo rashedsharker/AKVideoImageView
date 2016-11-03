@@ -13,9 +13,9 @@
 		A2F92F0B1BD0FE59005C8C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F091BD0FE59005C8C93 /* Main.storyboard */; };
 		A2F92F0D1BD0FE59005C8C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F0C1BD0FE59005C8C93 /* Assets.xcassets */; };
 		A2F92F101BD0FE59005C8C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F0E1BD0FE59005C8C93 /* LaunchScreen.storyboard */; };
-		A2F92F1E1BD115BB005C8C93 /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F1C1BD115B7005C8C93 /* video_1.mp4 */; settings = {ASSET_TAGS = (); }; };
-		A2F92F1F1BD115BB005C8C93 /* video_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F1D1BD115B7005C8C93 /* video_2.mp4 */; settings = {ASSET_TAGS = (); }; };
-		A2F92F251BD1175A005C8C93 /* AKVideoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F92F231BD1175A005C8C93 /* AKVideoImageView.m */; settings = {ASSET_TAGS = (); }; };
+		A2F92F1E1BD115BB005C8C93 /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F1C1BD115B7005C8C93 /* video_1.mp4 */; };
+		A2F92F1F1BD115BB005C8C93 /* video_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A2F92F1D1BD115B7005C8C93 /* video_2.mp4 */; };
+		A2F92F251BD1175A005C8C93 /* AKVideoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F92F231BD1175A005C8C93 /* AKVideoImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,7 +116,7 @@
 		A2F92EF51BD0FE59005C8C93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Oleksandr Kirichenko";
 				TargetAttributes = {
 					A2F92EFC1BD0FE59005C8C93 = {
@@ -204,8 +204,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -248,8 +250,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

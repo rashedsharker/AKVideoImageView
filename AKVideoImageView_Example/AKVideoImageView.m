@@ -42,7 +42,8 @@
         
         self.contentMode = UIViewContentModeScaleAspectFill;
         
-        self.videoURL = videoURL;
+        _videoURL = videoURL; //don't use setter here to avoid newVideoAvalilible flag for the initial run
+        
         [self showFirstFrame];
     }
     
@@ -70,27 +71,25 @@
 
 - (AVAssetReader *)createAssetReader
 {
-    @synchronized(self) {
-        NSCParameterAssert([self.videoURL isKindOfClass:[NSURL class]]);
+    NSCParameterAssert([self.videoURL isKindOfClass:[NSURL class]]);
 
-        NSDictionary *inputOptions = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-                                                                 forKey:AVURLAssetPreferPreciseDurationAndTimingKey];
-        AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:self.videoURL options:inputOptions];
-        
-        NSMutableDictionary *outputSettings = [NSMutableDictionary dictionary];
-        [outputSettings setObject:@(kCVPixelFormatType_32BGRA)
-                           forKey:(id)kCVPixelBufferPixelFormatTypeKey];
-        
-        AVAssetTrack *videoTrack = [videoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject;
-        
-        self.readerVideoTrackOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:videoTrack outputSettings:outputSettings];
-        self.readerVideoTrackOutput.alwaysCopiesSampleData = NO;
-        
-        AVAssetReader *assetReader = [AVAssetReader assetReaderWithAsset:videoAsset error:nil];
-        [assetReader addOutput:self.readerVideoTrackOutput];
-        
-        return assetReader;
-    }
+    NSDictionary *inputOptions = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+                                                             forKey:AVURLAssetPreferPreciseDurationAndTimingKey];
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:self.videoURL options:inputOptions];
+    
+    NSMutableDictionary *outputSettings = [NSMutableDictionary dictionary];
+    [outputSettings setObject:@(kCVPixelFormatType_32BGRA)
+                       forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+    
+    AVAssetTrack *videoTrack = [videoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject;
+    
+    self.readerVideoTrackOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:videoTrack outputSettings:outputSettings];
+    self.readerVideoTrackOutput.alwaysCopiesSampleData = NO;
+    
+    AVAssetReader *assetReader = [AVAssetReader assetReaderWithAsset:videoAsset error:nil];
+    [assetReader addOutput:self.readerVideoTrackOutput];
+    
+    return assetReader;
 }
 
 - (void)playVideo
@@ -162,7 +161,9 @@
     if (self.stopAnimation) {
         self.readerVideoTrackOutput = nil;
     } else {
-        [self playVideo];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self playVideo];
+        });
     }
 }
 
