@@ -1,13 +1,15 @@
 # AKVideoImageView
+![Platform](https://img.shields.io/cocoapods/p/AKVideoImageView.svg)
+![CocoaPods](https://img.shields.io/cocoapods/l/AKVideoImageView.svg)
 
-This class was created because I wasn't satisfied with standard Apple AVPlayer. AVPlayer doesn't let phone to go to sleep mode. Also you can't insensibly start video from the first frame when app enters background. This class solves this problems.
+This class was created because I wasn't satisfied with standard Apple AVPlayer during creating a video background for one of my apps. AVPlayer doesn't let the phone to go to sleep mode. Also, you can't insensibly start a video from the first frame when app enters background. This class solves these problems, and in the end, you have a perfect solution for making gorgeous video backgrounds for your apps.
 
 ![AKVideoImageView Example](Resources/example.gif)
 
 ##Features
 
 - Ability to dynamically switch videos
-- Auto set first frame of video to have seamless transition when app returns from background
+- Auto set the first frame of video to have seamless transition when app returns from background
 - Minimal memory footprint
 - Good performance
 - Ability to use mp4 files as video source
@@ -15,14 +17,23 @@ This class was created because I wasn't satisfied with standard Apple AVPlayer. 
 
 ##Installation
 
+####Manually
 Just add AKVideoImageView.h and AKVideoImageView.m files to your project.
+
+####CocoaPods
+Add the following line to your Podfile.
+
+```
+pod "AKVideoImageView", "~> 1.0"
+```
+
+Then run `pod install`.
+
+##Usage
 
 ###Compressing your video file
 Before starting using this class, you need to properly compress video.<br /> Here is an example of libx264 compression options on OS X system using ffmpeg utility:
 <br />ffmpeg -i input.mov -vcodec libx264 -level 3.1 -pix_fmt yuv420p -threads 1 -preset placebo -crf 19 -tune film -x264opts colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off output.mp4
-
-
-##Usage
 
 ###Basic Setup
 
