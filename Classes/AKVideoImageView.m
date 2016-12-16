@@ -228,7 +228,7 @@
                                         actualTime:NULL
                                              error:&igError];
     
-    if (!thumbnailImageRef) { NSLog(@"thumbnailImageGenerationError %@", igError ); }
+    if (!thumbnailImageRef) { NSLog(@"Thumbnail image generation error %@", igError ); }
     
     UIImage *thumbnailImage = thumbnailImageRef ? [[UIImage alloc] initWithCGImage:thumbnailImageRef] : nil;
     
