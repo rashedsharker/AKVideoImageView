@@ -21,6 +21,11 @@ NSString *const kSecondVideoName = @"video_2";
 
 @implementation ViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

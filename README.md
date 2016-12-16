@@ -2,6 +2,7 @@
 
 This class was created because I wasn't satisfied with standard Apple AVPlayer. AVPlayer doesn't let phone to go to sleep mode. Also you can't insensibly start video from the first frame when app enters background. This class solves this problems.
 
+![AKVideoImageView Example](Resources/example.gif)
 
 ##Features
 
